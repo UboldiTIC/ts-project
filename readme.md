@@ -66,3 +66,70 @@ Este proceso se puede realizar constantemente con cada cambio si usamos el coman
 ~~~
 npx tsc --watch
 ~~~
+
+## Qué es el tipado en TypeScript
+
+### Tipos de datos en JS
+
+Los tipos de datos para let y const:
+
+~~~
+let example = null; // null
+example = 'string'; // string
+example = 3.14; // number
+example = true; // boolean
+example = undefined; // undefined
+example = []; // array
+example = Symbol("abc") // Symbol
+
+example = {  // object
+  name: 'Nicolas',
+  lastName: 'Molina'
+}
+
+example = function (a) { // functions
+  return a;
+}
+~~~
+
+Ahora, en JS también tenemos la posibilidad de trabajar con clases:
+
+~~~
+class Rectangulo {
+  constructor(alto, ancho) {
+    this.alto = alto;
+    this.ancho = ancho;
+  }
+}
+
+const p = new Rectangulo();
+~~~
+
+Tambien contamos de forma natural en JS con estatic:
+
+~~~
+class Punto {
+  constructor (x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static distancia (a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+
+    return Math.sqrt ( dx. dx + dy * dy );
+  }
+}
+~~~
+
+### Variables en TS
+
+En typescript agregamos el tipo de datos, y si no lo agregamos el compilador lo infiere automáticamente evitando errores.
+
+~~~
+let productPrice: number = 12;
+~~~
+
+**: number** se conoce como *Type Annotation* o tipado.
+
