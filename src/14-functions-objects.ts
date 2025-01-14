@@ -24,13 +24,22 @@
 
     type Sizes = 'S' | 'M' | 'L' | 'XL';
 
+    const products: any[] = [];
+
     const addProduct = (data: {
         title: string,
         createdAt: Date,
         stock: number,
-        size?: Sizes
+        size?: Sizes // Parámetro opcional.
     }) => {
-
+        products.push(data);
     }
 
+    addProduct({
+        title: 'Pro1',
+        createdAt: new Date(1993, 1 , 1),
+        stock: 12,
+        size: 'XL'
+    });
+    console.log(products);
 })();
